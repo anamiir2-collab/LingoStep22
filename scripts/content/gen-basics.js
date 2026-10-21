@@ -179,7 +179,7 @@ const l2Lt = expandAll([
     be: (x) => [{ en: C.AGR[x.S.agr].be, ar: '' }],
     ADJ: (x) => ['tired', 'happy', 'busy', 'hungry', 'thirsty'].map((a) => ({
       en: a, // English adjectives are invariant — never inflect by gender/number
-      ar: (x.S.agr === 'I' || x.S.agr === 'you') ? ADJ_G[a].m : (x.S.agr === 'she' ? ADJ_G[a].f : (x.S.agr === 'they' ? ADJ_G[a].p : ADJ_G[a].m)),
+      ar: (x.S.agr === 'I' || x.S.agr === 'you') ? ADJ_G[a].m : (x.S.agr === 'she' ? ADJ_G[a].f : ((x.S.agr === 'we' || x.S.agr === 'they') ? ADJ_G[a].p : ADJ_G[a].m)),
     })),
   }, { tags: ['subject-pronouns', 'verb-be'], difficulty: 1 }),
   // Keep verb–object combinations semantic; generic cross-products produced
@@ -840,7 +840,7 @@ export function buildAll() {
         objectives: ['Use I, you, he, she, it, we, they', 'Match pronouns with the verb be', 'Replace names with pronouns'],
         grammar: {
           explanation: 'Subject pronouns replace people or things: I, you, he, she, it, we, they. Use "he" for one male, "she" for one female, "it" for things and animals, "we" for a group including you, and "they" for other groups. The verb "be" changes with the subject: I am, you are, he/she/it is, we are, they are.',
-          explanationAr: 'ضمائر الفاعل تحل محل الأشخاص أو الأشياء: I أنا، you أنت، he هو، she هي، it للجماد والحيوان، we نحن، they هم. استخدام he لمذكر واحد وshe لمؤنثة واحدة. يتغير الفعل was/be حسب الفاعل: I am، you are، he is، we are، they are.',
+          explanationAr: 'ضمائر الفاعل تحل محل الأشخاص أو الأشياء: I أنا، you أنت، he هو، she هي، it للأشياء والحيوانات، we نحن، they هم. نستخدم he لمذكر واحد وshe لمؤنثة واحدة. ويتغير تصريف الفعل be حسب الفاعل: I am، you are، he/she/it is، we/they are.',
           examples: [
             { en: 'I am a student.', ar: 'أنا طالب.' },
             { en: 'She is my sister.', ar: 'هي أختي.' },
