@@ -540,7 +540,7 @@ export default {
       "id": "lesson-002-ex-033",
       "type": "listen-and-type",
       "en": "We are thirsty.",
-      "ar": "نحن عطشان.",
+      "ar": "نحن عطاش.",
       "acceptedAnswers": [
         "We are thirsty."
       ],
