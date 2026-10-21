@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Subject pronouns replace people or things: I, you, he, she, it, we, they. Use \"he\" for one male, \"she\" for one female, \"it\" for things and animals, \"we\" for a group including you, and \"they\" for other groups. The verb \"be\" changes with the subject: I am, you are, he/she/it is, we are, they are.",
-    "explanationAr": "ضمائر الفاعل تحل محل الأشخاص أو الأشياء: I أنا، you أنت، he هو، she هي، it للجماد والحيوان، we نحن، they هم. استخدام he لمذكر واحد وshe لمؤنثة واحدة. يتغير الفعل was/be حسب الفاعل: I am، you are، he is، we are، they are.",
+    "explanationAr": "ضمائر الفاعل تحل محل الأشخاص أو الأشياء: I أنا، you أنت، he هو، she هي، it للجماد والحيوان، we نحن، they هم. استخدام he لمذكر واحد وshe لمؤنثة واحدة. يتغير الفعل be حسب الفاعل: I am، you are، he is، we are، they are.",
     "examples": [
       {
         "en": "I am a student.",
@@ -468,7 +468,7 @@ export default {
       "id": "lesson-002-ex-028",
       "type": "listen-and-type",
       "en": "We are tired.",
-      "ar": "نحن متعب.",
+      "ar": "نحن متعبون.",
       "acceptedAnswers": [
         "We are tired."
       ],
@@ -482,7 +482,7 @@ export default {
       "id": "lesson-002-ex-029",
       "type": "listen-and-type",
       "en": "We are happy.",
-      "ar": "نحن سعيد.",
+      "ar": "نحن سعداء.",
       "acceptedAnswers": [
         "We are happy."
       ],
@@ -496,7 +496,7 @@ export default {
       "id": "lesson-002-ex-030",
       "type": "listen-and-type",
       "en": "We are busy.",
-      "ar": "نحن مشغول.",
+      "ar": "نحن مشغولون.",
       "acceptedAnswers": [
         "We are busy."
       ],
@@ -510,7 +510,7 @@ export default {
       "id": "lesson-002-ex-031",
       "type": "listen-and-type",
       "en": "We are hungry.",
-      "ar": "نحن جائع.",
+      "ar": "نحن جائعون.",
       "acceptedAnswers": [
         "We are hungry."
       ],
@@ -686,10 +686,10 @@ export default {
     {
       "id": "lesson-002-ex-043",
       "type": "listen-and-type",
-      "en": "I write the newspaper every evening.",
-      "ar": "أنا أكتب الصحيفة كل مساء.",
+      "en": "I read the newspaper every evening.",
+      "ar": "أنا أقرأ الصحيفة كل مساء.",
       "acceptedAnswers": [
-        "I write the newspaper every evening."
+        "I read the newspaper every evening."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -700,10 +700,10 @@ export default {
     {
       "id": "lesson-002-ex-044",
       "type": "listen-and-type",
-      "en": "I write her bag every morning.",
-      "ar": "أنا أكتب حقيبتها كل صباح.",
+      "en": "I carry her bag every morning.",
+      "ar": "أنا أحمل حقيبتها كل صباح.",
       "acceptedAnswers": [
-        "I write her bag every morning."
+        "I carry her bag every morning."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -714,10 +714,10 @@ export default {
     {
       "id": "lesson-002-ex-045",
       "type": "listen-and-type",
-      "en": "I clean a message every day.",
-      "ar": "أنا أنظف رسالة كل يوم.",
+      "en": "I delete a message every day.",
+      "ar": "أنا أحذف رسالة كل يوم.",
       "acceptedAnswers": [
-        "I clean a message every day."
+        "I delete a message every day."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -728,10 +728,10 @@ export default {
     {
       "id": "lesson-002-ex-046",
       "type": "listen-and-type",
-      "en": "I wash a book every day.",
-      "ar": "أنا أغسل كتابا كل يوم.",
+      "en": "I wash my clothes every day.",
+      "ar": "أنا أغسل ملابسي كل يوم.",
       "acceptedAnswers": [
-        "I wash a book every day."
+        "I wash my clothes every day."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -758,10 +758,10 @@ export default {
     {
       "id": "lesson-002-ex-048",
       "type": "listen-and-type",
-      "en": "I wash a letter every week.",
-      "ar": "أنا أغسل خطابا كل أسبوع.",
+      "en": "I wash my clothes every week.",
+      "ar": "أنا أغسل ملابسي كل أسبوع.",
       "acceptedAnswers": [
-        "I wash a letter every week."
+        "I wash my clothes every week."
       ],
       "grammarTags": [
         "subject-pronouns",
