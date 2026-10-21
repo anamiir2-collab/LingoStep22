@@ -182,10 +182,17 @@ const l2Lt = expandAll([
       ar: (x.S.agr === 'I' || x.S.agr === 'you') ? ADJ_G[a].m : (x.S.agr === 'she' ? ADJ_G[a].f : (x.S.agr === 'they' ? ADJ_G[a].p : ADJ_G[a].m)),
     })),
   }, { tags: ['subject-pronouns', 'verb-be'], difficulty: 1 }),
-  pat('{S} {V} {O} {T}.', '{S_ar} {V_ar} {O_ar} {T_ar}.', {
+  // Keep verb–object combinations semantic; generic cross-products produced
+  // errors such as "wash a letter" and "clean a message".
+  pat('{S} {VOv} {VOo} {T}.', '{S_ar} {VOv_ar} {VOo_ar} {T_ar}.', {
     S: B.PRONOUNS,
-    V: (x) => ['read', 'write', 'clean', 'wash', 'check', 'visit'].map((v) => ({ en: C.enPresent(v, x.S.agr), ar: C.arPresent(v, x.S.agr) })),
-    O: B.THINGS.slice(0, 8),
+    VO: [
+      ...VO_GROUPS_1.filter((g) => ['read', 'write', 'clean', 'check'].includes(g.v)),
+      { v: 'wash', os: [{ en: 'my clothes', ar: 'ملابسي' }, { en: 'the dishes', ar: 'الأطباق' }, { en: 'the car', ar: 'السيارة' }] },
+      { v: 'visit', os: [{ en: 'my family', ar: 'عائلتي' }, { en: 'my friends', ar: 'أصدقائي' }, { en: 'the museum', ar: 'المتحف' }] },
+    ],
+    VOv: (x) => [{ en: C.enPresent(x.VO.v, x.S.agr), ar: C.arPresent(x.VO.v, x.S.agr) }],
+    VOo: (x) => x.VO.os,
     T: B.TIME_HABIT.slice(0, 4),
   }, { tags: ['subject-pronouns', 'present-simple'], difficulty: 1, limit: 60 }),
   pat('{N} {V} {O}.', '{N_ar} {V_ar} {O_ar}.', {
