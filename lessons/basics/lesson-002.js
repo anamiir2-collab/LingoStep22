@@ -14,7 +14,7 @@ export default {
   ],
   "grammar": {
     "explanation": "Subject pronouns replace people or things: I, you, he, she, it, we, they. Use \"he\" for one male, \"she\" for one female, \"it\" for things and animals, \"we\" for a group including you, and \"they\" for other groups. The verb \"be\" changes with the subject: I am, you are, he/she/it is, we are, they are.",
-    "explanationAr": "ضمائر الفاعل تحل محل الأشخاص أو الأشياء: I أنا، you أنت، he هو، she هي، it للجماد والحيوان، we نحن، they هم. استخدام he لمذكر واحد وshe لمؤنثة واحدة. يتغير الفعل be حسب الفاعل: I am، you are، he is، we are، they are.",
+    "explanationAr": "ضمائر الفاعل تحل محل الأشخاص أو الأشياء: I أنا، you أنت، he هو، she هي، it للأشياء والحيوانات، we نحن، they هم. نستخدم he لمذكر واحد وshe لمؤنثة واحدة. ويتغير تصريف الفعل be حسب الفاعل: I am، you are، he/she/it is، we/they are.",
     "examples": [
       {
         "en": "I am a student.",
@@ -540,7 +540,7 @@ export default {
       "id": "lesson-002-ex-033",
       "type": "listen-and-type",
       "en": "We are thirsty.",
-      "ar": "نحن عطاش.",
+      "ar": "نحن عطاشون.",
       "acceptedAnswers": [
         "We are thirsty."
       ],
@@ -616,7 +616,7 @@ export default {
       "id": "lesson-002-ex-038",
       "type": "listen-and-type",
       "en": "They are hungry.",
-      "ar": "هم جياع.",
+      "ar": "هم جائعون.",
       "acceptedAnswers": [
         "They are hungry."
       ],
@@ -630,7 +630,7 @@ export default {
       "id": "lesson-002-ex-039",
       "type": "listen-and-type",
       "en": "They are thirsty.",
-      "ar": "هم عطاش.",
+      "ar": "هم عطاشون.",
       "acceptedAnswers": [
         "They are thirsty."
       ],
@@ -672,10 +672,10 @@ export default {
     {
       "id": "lesson-002-ex-042",
       "type": "listen-and-type",
-      "en": "I read a letter every week.",
-      "ar": "أنا أقرأ خطابا كل أسبوع.",
+      "en": "I read an email every day.",
+      "ar": "أنا أقرأ بريدا إلكترونيا كل يوم.",
       "acceptedAnswers": [
-        "I read a letter every week."
+        "I read an email every day."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -686,10 +686,10 @@ export default {
     {
       "id": "lesson-002-ex-043",
       "type": "listen-and-type",
-      "en": "I read the newspaper every evening.",
-      "ar": "أنا أقرأ الصحيفة كل مساء.",
+      "en": "I read a story every day.",
+      "ar": "أنا أقرأ قصة كل يوم.",
       "acceptedAnswers": [
-        "I read the newspaper every evening."
+        "I read a story every day."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -700,10 +700,10 @@ export default {
     {
       "id": "lesson-002-ex-044",
       "type": "listen-and-type",
-      "en": "I carry her bag every morning.",
-      "ar": "أنا أحمل حقيبتها كل صباح.",
+      "en": "I write a letter every morning.",
+      "ar": "أنا أكتب خطابا كل صباح.",
       "acceptedAnswers": [
-        "I carry her bag every morning."
+        "I write a letter every morning."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -714,10 +714,10 @@ export default {
     {
       "id": "lesson-002-ex-045",
       "type": "listen-and-type",
-      "en": "I delete a message every day.",
-      "ar": "أنا أحذف رسالة كل يوم.",
+      "en": "I write a story every morning.",
+      "ar": "أنا أكتب قصة كل صباح.",
       "acceptedAnswers": [
-        "I delete a message every day."
+        "I write a story every morning."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -728,10 +728,10 @@ export default {
     {
       "id": "lesson-002-ex-046",
       "type": "listen-and-type",
-      "en": "I wash my clothes every day.",
-      "ar": "أنا أغسل ملابسي كل يوم.",
+      "en": "I clean the kitchen every evening.",
+      "ar": "أنا أنظف المطبخ كل مساء.",
       "acceptedAnswers": [
-        "I wash my clothes every day."
+        "I clean the kitchen every evening."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -758,10 +758,10 @@ export default {
     {
       "id": "lesson-002-ex-048",
       "type": "listen-and-type",
-      "en": "I wash my clothes every week.",
-      "ar": "أنا أغسل ملابسي كل أسبوع.",
+      "en": "I check my email every evening.",
+      "ar": "أنا أفحص بريدي الإلكتروني كل مساء.",
       "acceptedAnswers": [
-        "I wash my clothes every week."
+        "I check my email every evening."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -807,10 +807,10 @@ export default {
     {
       "id": "lesson-002-ex-051",
       "type": "listen-and-type",
-      "en": "I check the newspaper every evening.",
-      "ar": "أنا أفحص الصحيفة كل مساء.",
+      "en": "I check the report every evening.",
+      "ar": "أنا أفحص التقرير كل مساء.",
       "acceptedAnswers": [
-        "I check the newspaper every evening."
+        "I check the report every evening."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -821,10 +821,10 @@ export default {
     {
       "id": "lesson-002-ex-052",
       "type": "listen-and-type",
-      "en": "I check her bag every morning.",
-      "ar": "أنا أفحص حقيبتها كل صباح.",
+      "en": "I wash the dishes every week.",
+      "ar": "أنا أغسل الأطباق كل أسبوع.",
       "acceptedAnswers": [
-        "I check her bag every morning."
+        "I wash the dishes every week."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -835,10 +835,10 @@ export default {
     {
       "id": "lesson-002-ex-053",
       "type": "listen-and-type",
-      "en": "I visit a message every day.",
-      "ar": "أنا أزور رسالة كل يوم.",
+      "en": "I visit my family every week.",
+      "ar": "أنا أزور عائلتي كل أسبوع.",
       "acceptedAnswers": [
-        "I visit a message every day."
+        "I visit my family every week."
       ],
       "grammarTags": [
         "subject-pronouns",
@@ -863,10 +863,10 @@ export default {
     {
       "id": "lesson-002-ex-055",
       "type": "listen-and-type",
-      "en": "You read a letter every week.",
-      "ar": "أنت تقرأ خطابا كل أسبوع.",
+      "en": "You read an email every day.",
+      "ar": "أنت تقرأ بريدا إلكترونيا كل يوم.",
       "acceptedAnswers": [
-        "You read a letter every week."
+        "You read an email every day."
       ],
       "grammarTags": [
         "subject-pronouns",

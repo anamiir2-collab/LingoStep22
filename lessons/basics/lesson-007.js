@@ -222,10 +222,10 @@ export default {
     {
       "id": "lesson-007-ex-011",
       "type": "listen-and-type",
-      "en": "There are three chairs in the room.",
-      "ar": "هناك ثلاثة كراسي في الغرفة.",
+      "en": "There are four chairs in the room.",
+      "ar": "هناك أربعة كراسي في الغرفة.",
       "acceptedAnswers": [
-        "There are three chairs in the room."
+        "There are four chairs in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -236,10 +236,10 @@ export default {
     {
       "id": "lesson-007-ex-012",
       "type": "listen-and-type",
-      "en": "There are three keys in the room.",
-      "ar": "هناك ثلاثة مفاتيح في الغرفة.",
+      "en": "There are five keys in the room.",
+      "ar": "هناك خمسة مفاتيح في الغرفة.",
       "acceptedAnswers": [
-        "There are three keys in the room."
+        "There are five keys in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -250,10 +250,10 @@ export default {
     {
       "id": "lesson-007-ex-013",
       "type": "listen-and-type",
-      "en": "There are three pens in the room.",
-      "ar": "هناك ثلاثة قلمين في الغرفة.",
+      "en": "There are six photos in the room.",
+      "ar": "هناك ست صور في الغرفة.",
       "acceptedAnswers": [
-        "There are three pens in the room."
+        "There are six photos in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -280,22 +280,8 @@ export default {
     {
       "id": "lesson-007-ex-015",
       "type": "listen-and-type",
-      "en": "There are three photos in the room.",
-      "ar": "هناك ثلاثة صور في الغرفة.",
-      "acceptedAnswers": [
-        "There are three photos in the room."
-      ],
-      "grammarTags": [
-        "there-are",
-        "plural"
-      ],
-      "difficulty": 1
-    },
-    {
-      "id": "lesson-007-ex-016",
-      "type": "listen-and-type",
       "en": "There are three bags in the room.",
-      "ar": "هناك ثلاثة حقائب في الغرفة.",
+      "ar": "هناك ثلاث حقائب في الغرفة.",
       "acceptedAnswers": [
         "There are three bags in the room."
       ],
@@ -306,12 +292,26 @@ export default {
       "difficulty": 1
     },
     {
+      "id": "lesson-007-ex-016",
+      "type": "listen-and-type",
+      "en": "There are four buses in the room.",
+      "ar": "هناك أربع حافلات في الغرفة.",
+      "acceptedAnswers": [
+        "There are four buses in the room."
+      ],
+      "grammarTags": [
+        "there-are",
+        "plural"
+      ],
+      "difficulty": 1
+    },
+    {
       "id": "lesson-007-ex-017",
       "type": "listen-and-type",
-      "en": "There are four books in the room.",
-      "ar": "هناك أربعة كتب في الغرفة.",
+      "en": "There are five rooms in the room.",
+      "ar": "هناك خمس غرف في الغرفة.",
       "acceptedAnswers": [
-        "There are four books in the room."
+        "There are five rooms in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -322,10 +322,10 @@ export default {
     {
       "id": "lesson-007-ex-018",
       "type": "listen-and-type",
-      "en": "There are four chairs in the room.",
-      "ar": "هناك أربعة كراسي في الغرفة.",
+      "en": "There are seven doors in the room.",
+      "ar": "هناك سبعة أبواب في الغرفة.",
       "acceptedAnswers": [
-        "There are four chairs in the room."
+        "There are seven doors in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -336,10 +336,10 @@ export default {
     {
       "id": "lesson-007-ex-019",
       "type": "listen-and-type",
-      "en": "There are four keys in the room.",
-      "ar": "هناك أربعة مفاتيح في الغرفة.",
+      "en": "There are eight pens in the room.",
+      "ar": "هناك ثمانية أقلام في الغرفة.",
       "acceptedAnswers": [
-        "There are four keys in the room."
+        "There are eight pens in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -350,10 +350,10 @@ export default {
     {
       "id": "lesson-007-ex-020",
       "type": "listen-and-type",
-      "en": "There are four pens in the room.",
-      "ar": "هناك أربعة قلمين في الغرفة.",
+      "en": "There are six shops in the room.",
+      "ar": "هناك ستة متاجر في الغرفة.",
       "acceptedAnswers": [
-        "There are four pens in the room."
+        "There are six shops in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -385,10 +385,10 @@ export default {
     {
       "id": "lesson-007-ex-022",
       "type": "listen-and-type",
-      "en": "There are four photos in the room.",
-      "ar": "هناك أربعة صور في الغرفة.",
+      "en": "There are three eggs in the room.",
+      "ar": "هناك ثلاث بيضات في الغرفة.",
       "acceptedAnswers": [
-        "There are four photos in the room."
+        "There are three eggs in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -414,10 +414,10 @@ export default {
     {
       "id": "lesson-007-ex-024",
       "type": "listen-and-type",
-      "en": "There are four bags in the room.",
-      "ar": "هناك أربعة حقائب في الغرفة.",
+      "en": "There are ten questions in the room.",
+      "ar": "هناك عشرة أسئلة في الغرفة.",
       "acceptedAnswers": [
-        "There are four bags in the room."
+        "There are ten questions in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -428,10 +428,10 @@ export default {
     {
       "id": "lesson-007-ex-025",
       "type": "listen-and-type",
-      "en": "There are five books in the room.",
-      "ar": "هناك خمسة كتب في الغرفة.",
+      "en": "There are five phones in the room.",
+      "ar": "هناك خمسة هواتف في الغرفة.",
       "acceptedAnswers": [
-        "There are five books in the room."
+        "There are five phones in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -442,10 +442,10 @@ export default {
     {
       "id": "lesson-007-ex-026",
       "type": "listen-and-type",
-      "en": "There are five chairs in the room.",
-      "ar": "هناك خمسة كراسي في الغرفة.",
+      "en": "There are six boxes in the room.",
+      "ar": "هناك ستة صناديق في الغرفة.",
       "acceptedAnswers": [
-        "There are five chairs in the room."
+        "There are six boxes in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -472,10 +472,10 @@ export default {
     {
       "id": "lesson-007-ex-028",
       "type": "listen-and-type",
-      "en": "There are five keys in the room.",
-      "ar": "هناك خمسة مفاتيح في الغرفة.",
+      "en": "There are four stories in the room.",
+      "ar": "هناك أربع قصص في الغرفة.",
       "acceptedAnswers": [
-        "There are five keys in the room."
+        "There are four stories in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -486,10 +486,10 @@ export default {
     {
       "id": "lesson-007-ex-029",
       "type": "listen-and-type",
-      "en": "There are five pens in the room.",
-      "ar": "هناك خمسة قلمين في الغرفة.",
+      "en": "There are seven students in the room.",
+      "ar": "هناك سبعة طلاب في الغرفة.",
       "acceptedAnswers": [
-        "There are five pens in the room."
+        "There are seven students in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -500,10 +500,10 @@ export default {
     {
       "id": "lesson-007-ex-030",
       "type": "listen-and-type",
-      "en": "There are five photos in the room.",
-      "ar": "هناك خمسة صور في الغرفة.",
+      "en": "There are five minutes in the room.",
+      "ar": "هناك خمس دقائق في الغرفة.",
       "acceptedAnswers": [
-        "There are five photos in the room."
+        "There are five minutes in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -514,10 +514,10 @@ export default {
     {
       "id": "lesson-007-ex-031",
       "type": "listen-and-type",
-      "en": "There are five bags in the room.",
-      "ar": "هناك خمسة حقائب في الغرفة.",
+      "en": "There are four shirts in the room.",
+      "ar": "هناك أربع قمصان في الغرفة.",
       "acceptedAnswers": [
-        "There are five bags in the room."
+        "There are four shirts in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -543,10 +543,10 @@ export default {
     {
       "id": "lesson-007-ex-033",
       "type": "listen-and-type",
-      "en": "There are two books in the room.",
-      "ar": "هناك اثنان كتب في الغرفة.",
+      "en": "There are eight buses in the room.",
+      "ar": "هناك ثماني حافلات في الغرفة.",
       "acceptedAnswers": [
-        "There are two books in the room."
+        "There are eight buses in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -557,10 +557,10 @@ export default {
     {
       "id": "lesson-007-ex-034",
       "type": "listen-and-type",
-      "en": "There are two chairs in the room.",
-      "ar": "هناك اثنان كراسي في الغرفة.",
+      "en": "There are three phones in the room.",
+      "ar": "هناك ثلاثة هواتف في الغرفة.",
       "acceptedAnswers": [
-        "There are two chairs in the room."
+        "There are three phones in the room."
       ],
       "grammarTags": [
         "there-are",
@@ -591,70 +591,70 @@ export default {
     {
       "id": "lesson-007-ex-036",
       "type": "listen-and-type",
-      "en": "There are two keys in the room.",
-      "ar": "هناك اثنان مفاتيح في الغرفة.",
+      "en": "I see three books every day.",
+      "ar": "أرى ثلاثة كتب كل يوم.",
       "acceptedAnswers": [
-        "There are two keys in the room."
+        "I see three books every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-037",
       "type": "listen-and-type",
-      "en": "There are two pens in the room.",
-      "ar": "هناك اثنان قلمين في الغرفة.",
+      "en": "I see four chairs every day.",
+      "ar": "أرى أربعة كراسي كل يوم.",
       "acceptedAnswers": [
-        "There are two pens in the room."
+        "I see four chairs every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-038",
       "type": "listen-and-type",
-      "en": "There are two photos in the room.",
-      "ar": "هناك اثنان صور في الغرفة.",
+      "en": "I see five keys every day.",
+      "ar": "أرى خمسة مفاتيح كل يوم.",
       "acceptedAnswers": [
-        "There are two photos in the room."
+        "I see five keys every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-039",
       "type": "listen-and-type",
-      "en": "There are two bags in the room.",
-      "ar": "هناك اثنان حقائب في الغرفة.",
+      "en": "I see six photos every day.",
+      "ar": "أرى ست صور كل يوم.",
       "acceptedAnswers": [
-        "There are two bags in the room."
+        "I see six photos every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-040",
       "type": "listen-and-type",
-      "en": "There are six books in the room.",
-      "ar": "هناك ستة كتب في الغرفة.",
+      "en": "I see three bags every day.",
+      "ar": "أرى ثلاث حقائب كل يوم.",
       "acceptedAnswers": [
-        "There are six books in the room."
+        "I see three bags every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
@@ -676,70 +676,70 @@ export default {
     {
       "id": "lesson-007-ex-042",
       "type": "listen-and-type",
-      "en": "There are six chairs in the room.",
-      "ar": "هناك ستة كراسي في الغرفة.",
+      "en": "I see four buses every day.",
+      "ar": "أرى أربع حافلات كل يوم.",
       "acceptedAnswers": [
-        "There are six chairs in the room."
+        "I see four buses every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-043",
       "type": "listen-and-type",
-      "en": "There are six keys in the room.",
-      "ar": "هناك ستة مفاتيح في الغرفة.",
+      "en": "I see five rooms every day.",
+      "ar": "أرى خمس غرف كل يوم.",
       "acceptedAnswers": [
-        "There are six keys in the room."
+        "I see five rooms every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-044",
       "type": "listen-and-type",
-      "en": "There are six pens in the room.",
-      "ar": "هناك ستة قلمين في الغرفة.",
+      "en": "I see seven doors every day.",
+      "ar": "أرى سبعة أبواب كل يوم.",
       "acceptedAnswers": [
-        "There are six pens in the room."
+        "I see seven doors every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-045",
       "type": "listen-and-type",
-      "en": "There are six photos in the room.",
-      "ar": "هناك ستة صور في الغرفة.",
+      "en": "I see eight pens every day.",
+      "ar": "أرى ثمانية أقلام كل يوم.",
       "acceptedAnswers": [
-        "There are six photos in the room."
+        "I see eight pens every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
     {
       "id": "lesson-007-ex-046",
       "type": "listen-and-type",
-      "en": "There are six bags in the room.",
-      "ar": "هناك ستة حقائب في الغرفة.",
+      "en": "I see six shops every day.",
+      "ar": "أرى ستة متاجر كل يوم.",
       "acceptedAnswers": [
-        "There are six bags in the room."
+        "I see six shops every day."
       ],
       "grammarTags": [
-        "there-are",
-        "plural"
+        "plural",
+        "present-simple"
       ],
       "difficulty": 1
     },
@@ -762,10 +762,10 @@ export default {
     {
       "id": "lesson-007-ex-048",
       "type": "listen-and-type",
-      "en": "I see three books every day.",
-      "ar": "أرى ثلاثة كتب كل يوم.",
+      "en": "I see three eggs every day.",
+      "ar": "أرى ثلاث بيضات كل يوم.",
       "acceptedAnswers": [
-        "I see three books every day."
+        "I see three eggs every day."
       ],
       "grammarTags": [
         "plural",
@@ -812,10 +812,10 @@ export default {
     {
       "id": "lesson-007-ex-051",
       "type": "listen-and-type",
-      "en": "I see three chairs every day.",
-      "ar": "أرى ثلاثة كراسي كل يوم.",
+      "en": "I see ten questions every day.",
+      "ar": "أرى عشرة أسئلة كل يوم.",
       "acceptedAnswers": [
-        "I see three chairs every day."
+        "I see ten questions every day."
       ],
       "grammarTags": [
         "plural",
@@ -826,10 +826,10 @@ export default {
     {
       "id": "lesson-007-ex-052",
       "type": "listen-and-type",
-      "en": "I see three keys every day.",
-      "ar": "أرى ثلاثة مفاتيح كل يوم.",
+      "en": "I see five phones every day.",
+      "ar": "أرى خمسة هواتف كل يوم.",
       "acceptedAnswers": [
-        "I see three keys every day."
+        "I see five phones every day."
       ],
       "grammarTags": [
         "plural",
@@ -840,10 +840,10 @@ export default {
     {
       "id": "lesson-007-ex-053",
       "type": "listen-and-type",
-      "en": "I see three pens every day.",
-      "ar": "أرى ثلاثة قلمين كل يوم.",
+      "en": "I see six boxes every day.",
+      "ar": "أرى ستة صناديق كل يوم.",
       "acceptedAnswers": [
-        "I see three pens every day."
+        "I see six boxes every day."
       ],
       "grammarTags": [
         "plural",
@@ -854,10 +854,10 @@ export default {
     {
       "id": "lesson-007-ex-054",
       "type": "listen-and-type",
-      "en": "I see three photos every day.",
-      "ar": "أرى ثلاثة صور كل يوم.",
+      "en": "I see four stories every day.",
+      "ar": "أرى أربع قصص كل يوم.",
       "acceptedAnswers": [
-        "I see three photos every day."
+        "I see four stories every day."
       ],
       "grammarTags": [
         "plural",
@@ -868,10 +868,10 @@ export default {
     {
       "id": "lesson-007-ex-055",
       "type": "listen-and-type",
-      "en": "I see three bags every day.",
-      "ar": "أرى ثلاثة حقائب كل يوم.",
+      "en": "I see seven students every day.",
+      "ar": "أرى سبعة طلاب كل يوم.",
       "acceptedAnswers": [
-        "I see three bags every day."
+        "I see seven students every day."
       ],
       "grammarTags": [
         "plural",

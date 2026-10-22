@@ -81,21 +81,6 @@ export default {
     {
       "id": "lesson-012-ex-002",
       "type": "listen-and-type",
-      "en": "I write a story every morning.",
-      "ar": "أنا أكتب قصة كل صباح.",
-      "acceptedAnswers": [
-        "I write a story every morning."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-003",
-      "type": "listen-and-type",
       "en": "I cook chicken every day.",
       "ar": "أنا أطبخ الدجاج كل يوم.",
       "acceptedAnswers": [
@@ -109,12 +94,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-004",
+      "id": "lesson-012-ex-003",
       "type": "listen-and-type",
       "en": "I check the report every week.",
       "ar": "أنا أفحص التقرير كل أسبوع.",
       "acceptedAnswers": [
         "I check the report every week."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-004",
+      "type": "listen-and-type",
+      "en": "I teach English every evening.",
+      "ar": "أنا أعلم الإنجليزية كل مساء.",
+      "acceptedAnswers": [
+        "I teach English every evening."
       ],
       "grammarTags": [
         "svo",
@@ -142,10 +142,10 @@ export default {
     {
       "id": "lesson-012-ex-006",
       "type": "listen-and-type",
-      "en": "I teach English every evening.",
-      "ar": "أنا أعلم الإنجليزية كل مساء.",
+      "en": "I wash the car every day.",
+      "ar": "أنا أغسل السيارة كل يوم.",
       "acceptedAnswers": [
-        "I teach English every evening."
+        "I wash the car every day."
       ],
       "grammarTags": [
         "svo",
@@ -175,10 +175,10 @@ export default {
     {
       "id": "lesson-012-ex-008",
       "type": "listen-and-type",
-      "en": "I wash the car every day.",
-      "ar": "أنا أغسل السيارة كل يوم.",
+      "en": "You eat chicken every week.",
+      "ar": "أنت تأكل الدجاج كل أسبوع.",
       "acceptedAnswers": [
-        "I wash the car every day."
+        "You eat chicken every week."
       ],
       "grammarTags": [
         "svo",
@@ -212,21 +212,6 @@ export default {
     {
       "id": "lesson-012-ex-010",
       "type": "listen-and-type",
-      "en": "You eat chicken every week.",
-      "ar": "أنت تأكل الدجاج كل أسبوع.",
-      "acceptedAnswers": [
-        "You eat chicken every week."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-011",
-      "type": "listen-and-type",
       "en": "You read a book every evening.",
       "ar": "أنت تقرأ كتابا كل مساء.",
       "acceptedAnswers": [
@@ -240,7 +225,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-012",
+      "id": "lesson-012-ex-011",
       "type": "listen-and-type",
       "en": "You watch a match every morning.",
       "ar": "أنت تشاهد مباراة كل صباح.",
@@ -255,12 +240,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-013",
+      "id": "lesson-012-ex-012",
       "type": "listen-and-type",
       "en": "You clean the kitchen every day.",
       "ar": "أنت تنظف المطبخ كل يوم.",
       "acceptedAnswers": [
         "You clean the kitchen every day."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-013",
+      "type": "listen-and-type",
+      "en": "You play video games every evening.",
+      "ar": "أنت تلعب ألعاب الفيديو كل مساء.",
+      "acceptedAnswers": [
+        "You play video games every evening."
       ],
       "grammarTags": [
         "svo",
@@ -289,21 +289,6 @@ export default {
     {
       "id": "lesson-012-ex-015",
       "type": "listen-and-type",
-      "en": "You play video games every evening.",
-      "ar": "أنت تلعب ألعاب الفيديو كل مساء.",
-      "acceptedAnswers": [
-        "You play video games every evening."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-016",
-      "type": "listen-and-type",
       "en": "You sell a house every morning.",
       "ar": "أنت تبيع بيتا كل صباح.",
       "acceptedAnswers": [
@@ -317,7 +302,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-017",
+      "id": "lesson-012-ex-016",
       "type": "listen-and-type",
       "en": "You call the doctor every day.",
       "ar": "أنت تتصل الطبيب كل يوم.",
@@ -332,7 +317,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-018",
+      "id": "lesson-012-ex-017",
       "type": "listen-and-type",
       "en": "He eats a banana every week.",
       "ar": "هو يأكل موزة كل أسبوع.",
@@ -347,7 +332,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-019",
+      "id": "lesson-012-ex-018",
       "type": "listen-and-type",
       "en": "He reads a story every evening.",
       "ar": "هو يقرأ قصة كل مساء.",
@@ -362,12 +347,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-020",
+      "id": "lesson-012-ex-019",
       "type": "listen-and-type",
       "en": "He buys a map every day.",
       "ar": "هو يشتري خريطة كل يوم.",
       "acceptedAnswers": [
         "He buys a map every day."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-020",
+      "type": "listen-and-type",
+      "en": "He opens the window every week.",
+      "ar": "هو يفتح النافذة كل أسبوع.",
+      "acceptedAnswers": [
+        "He opens the window every week."
       ],
       "grammarTags": [
         "svo",
@@ -401,10 +401,10 @@ export default {
     {
       "id": "lesson-012-ex-022",
       "type": "listen-and-type",
-      "en": "He opens the window every week.",
-      "ar": "هو يفتح النافذة كل أسبوع.",
+      "en": "He studies science every evening.",
+      "ar": "هو يدرس العلوم كل مساء.",
       "acceptedAnswers": [
-        "He opens the window every week."
+        "He studies science every evening."
       ],
       "grammarTags": [
         "svo",
@@ -432,21 +432,6 @@ export default {
     {
       "id": "lesson-012-ex-024",
       "type": "listen-and-type",
-      "en": "He studies science every evening.",
-      "ar": "هو يدرس العلوم كل مساء.",
-      "acceptedAnswers": [
-        "He studies science every evening."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-025",
-      "type": "listen-and-type",
       "en": "He starts a course every morning.",
       "ar": "هو يبدأ دورة كل صباح.",
       "acceptedAnswers": [
@@ -460,12 +445,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-026",
+      "id": "lesson-012-ex-025",
       "type": "listen-and-type",
       "en": "She drinks coffee every evening.",
       "ar": "هي تشرب القهوة كل مساء.",
       "acceptedAnswers": [
         "She drinks coffee every evening."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-026",
+      "type": "listen-and-type",
+      "en": "She writes a story every morning.",
+      "ar": "هي تكتب قصة كل صباح.",
+      "acceptedAnswers": [
+        "She writes a story every morning."
       ],
       "grammarTags": [
         "svo",
@@ -494,21 +494,6 @@ export default {
     {
       "id": "lesson-012-ex-028",
       "type": "listen-and-type",
-      "en": "She writes a story every morning.",
-      "ar": "هي تكتب قصة كل صباح.",
-      "acceptedAnswers": [
-        "She writes a story every morning."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-029",
-      "type": "listen-and-type",
       "en": "She cooks chicken every day.",
       "ar": "هي تطبخ الدجاج كل يوم.",
       "acceptedAnswers": [
@@ -522,7 +507,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-030",
+      "id": "lesson-012-ex-029",
       "type": "listen-and-type",
       "en": "She checks the report every week.",
       "ar": "هي تفحص التقرير كل أسبوع.",
@@ -537,12 +522,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-031",
+      "id": "lesson-012-ex-030",
       "type": "listen-and-type",
       "en": "She teaches English every evening.",
       "ar": "هي تعلم الإنجليزية كل مساء.",
       "acceptedAnswers": [
         "She teaches English every evening."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-031",
+      "type": "listen-and-type",
+      "en": "She washes the car every day.",
+      "ar": "هي تغسل السيارة كل يوم.",
+      "acceptedAnswers": [
+        "She washes the car every day."
       ],
       "grammarTags": [
         "svo",
@@ -570,10 +570,10 @@ export default {
     {
       "id": "lesson-012-ex-033",
       "type": "listen-and-type",
-      "en": "She washes the car every day.",
-      "ar": "هي تغسل السيارة كل يوم.",
+      "en": "We eat chicken every week.",
+      "ar": "نحن نأكل الدجاج كل أسبوع.",
       "acceptedAnswers": [
-        "She washes the car every day."
+        "We eat chicken every week."
       ],
       "grammarTags": [
         "svo",
@@ -585,10 +585,10 @@ export default {
     {
       "id": "lesson-012-ex-034",
       "type": "listen-and-type",
-      "en": "We eat chicken every week.",
-      "ar": "نحن نأكل الدجاج كل أسبوع.",
+      "en": "We read a book every evening.",
+      "ar": "نحن نقرأ كتابا كل مساء.",
       "acceptedAnswers": [
-        "We eat chicken every week."
+        "We read a book every evening."
       ],
       "grammarTags": [
         "svo",
@@ -621,21 +621,6 @@ export default {
     {
       "id": "lesson-012-ex-036",
       "type": "listen-and-type",
-      "en": "We read a book every evening.",
-      "ar": "نحن نقرأ كتابا كل مساء.",
-      "acceptedAnswers": [
-        "We read a book every evening."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-037",
-      "type": "listen-and-type",
       "en": "We watch a match every morning.",
       "ar": "نحن نشاهد مباراة كل صباح.",
       "acceptedAnswers": [
@@ -649,7 +634,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-038",
+      "id": "lesson-012-ex-037",
       "type": "listen-and-type",
       "en": "We clean the kitchen every day.",
       "ar": "نحن ننظف المطبخ كل يوم.",
@@ -664,7 +649,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-039",
+      "id": "lesson-012-ex-038",
       "type": "listen-and-type",
       "en": "We play video games every evening.",
       "ar": "نحن نلعب ألعاب الفيديو كل مساء.",
@@ -679,12 +664,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-040",
+      "id": "lesson-012-ex-039",
       "type": "listen-and-type",
       "en": "We sell a house every morning.",
       "ar": "نحن نبيع بيتا كل صباح.",
       "acceptedAnswers": [
         "We sell a house every morning."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-040",
+      "type": "listen-and-type",
+      "en": "We call the doctor every day.",
+      "ar": "نحن نتصل الطبيب كل يوم.",
+      "acceptedAnswers": [
+        "We call the doctor every day."
       ],
       "grammarTags": [
         "svo",
@@ -712,21 +712,6 @@ export default {
     {
       "id": "lesson-012-ex-042",
       "type": "listen-and-type",
-      "en": "We call the doctor every day.",
-      "ar": "نحن نتصل الطبيب كل يوم.",
-      "acceptedAnswers": [
-        "We call the doctor every day."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-043",
-      "type": "listen-and-type",
       "en": "They eat a banana every week.",
       "ar": "هم يأكلون موزة كل أسبوع.",
       "acceptedAnswers": [
@@ -740,7 +725,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-044",
+      "id": "lesson-012-ex-043",
       "type": "listen-and-type",
       "en": "They read a story every evening.",
       "ar": "هم يقرؤون قصة كل مساء.",
@@ -755,7 +740,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-045",
+      "id": "lesson-012-ex-044",
       "type": "listen-and-type",
       "en": "They buy a map every day.",
       "ar": "هم يشترون خريطة كل يوم.",
@@ -770,12 +755,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-046",
+      "id": "lesson-012-ex-045",
       "type": "listen-and-type",
       "en": "They open the window every week.",
       "ar": "هم يفتحون النافذة كل أسبوع.",
       "acceptedAnswers": [
         "They open the window every week."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-046",
+      "type": "listen-and-type",
+      "en": "They study science every evening.",
+      "ar": "هم يدرسون العلوم كل مساء.",
+      "acceptedAnswers": [
+        "They study science every evening."
       ],
       "grammarTags": [
         "svo",
@@ -804,10 +804,10 @@ export default {
     {
       "id": "lesson-012-ex-048",
       "type": "listen-and-type",
-      "en": "They study science every evening.",
-      "ar": "هم يدرسون العلوم كل مساء.",
+      "en": "They start a course every morning.",
+      "ar": "هم يبدؤون دورة كل صباح.",
       "acceptedAnswers": [
-        "They study science every evening."
+        "They start a course every morning."
       ],
       "grammarTags": [
         "svo",
@@ -856,21 +856,6 @@ export default {
     {
       "id": "lesson-012-ex-051",
       "type": "listen-and-type",
-      "en": "They start a course every morning.",
-      "ar": "هم يبدؤون دورة كل صباح.",
-      "acceptedAnswers": [
-        "They start a course every morning."
-      ],
-      "grammarTags": [
-        "svo",
-        "review",
-        "present-simple"
-      ],
-      "difficulty": 2
-    },
-    {
-      "id": "lesson-012-ex-052",
-      "type": "listen-and-type",
       "en": "My brother eats an apple every day.",
       "ar": "أخي يأكل تفاحة كل يوم.",
       "acceptedAnswers": [
@@ -884,7 +869,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-053",
+      "id": "lesson-012-ex-052",
       "type": "listen-and-type",
       "en": "My brother drinks coffee every evening.",
       "ar": "أخي يشرب القهوة كل مساء.",
@@ -899,7 +884,7 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-054",
+      "id": "lesson-012-ex-053",
       "type": "listen-and-type",
       "en": "My brother writes a story every morning.",
       "ar": "أخي يكتب قصة كل صباح.",
@@ -914,12 +899,27 @@ export default {
       "difficulty": 2
     },
     {
-      "id": "lesson-012-ex-055",
+      "id": "lesson-012-ex-054",
       "type": "listen-and-type",
       "en": "My brother cooks chicken every day.",
       "ar": "أخي يطبخ الدجاج كل يوم.",
       "acceptedAnswers": [
         "My brother cooks chicken every day."
+      ],
+      "grammarTags": [
+        "svo",
+        "review",
+        "present-simple"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "lesson-012-ex-055",
+      "type": "listen-and-type",
+      "en": "My brother checks the report every week.",
+      "ar": "أخي يفحص التقرير كل أسبوع.",
+      "acceptedAnswers": [
+        "My brother checks the report every week."
       ],
       "grammarTags": [
         "svo",
