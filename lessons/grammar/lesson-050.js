@@ -706,7 +706,7 @@ export default {
       "id": "lesson-050-ex-043",
       "type": "listen-and-type",
       "en": "They told me the wedding had been postponed.",
-      "ar": "أخبروني أن الزفاف كان قد أجّل.",
+      "ar": "أخبروني أن الزفاف كان قد تأجّل.",
       "acceptedAnswers": [
         "They told me the wedding had been postponed."
       ],

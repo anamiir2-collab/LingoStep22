@@ -510,7 +510,7 @@ export default {
       "id": "lesson-051-ex-030",
       "type": "listen-and-type",
       "en": "The village where my grandparents live has no traffic lights.",
-      "ar": "القرية التي يسكن فيها جدي وجدتي لا فيها إشارات مرور.",
+      "ar": "القرية التي يسكن فيها جدي وجدتي لا توجد فيها إشارات مرور.",
       "acceptedAnswers": [
         "The village where my grandparents live has no traffic lights."
       ],

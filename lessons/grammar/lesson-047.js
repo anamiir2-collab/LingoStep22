@@ -570,7 +570,7 @@ export default {
       "id": "lesson-047-ex-034",
       "type": "listen-and-type",
       "en": "If babies are hungry, they cry.",
-      "ar": "إذا كان الأطفال جياعا، فإنهم يبكون.",
+      "ar": "إذا كان الأطفال جائعين، فإنهم يبكون.",
       "acceptedAnswers": [
         "If babies are hungry, they cry."
       ],
@@ -782,7 +782,7 @@ export default {
       "id": "lesson-047-ex-048",
       "type": "listen-and-type",
       "en": "If the app updates tonight, it will work faster.",
-      "ar": "إذا حدّث التطبيق نفسه الليلة، سيعمل أسرع.",
+      "ar": "إذا تم تحديث التطبيق الليلة، سيعمل أسرع.",
       "acceptedAnswers": [
         "If the app updates tonight, it will work faster."
       ],
