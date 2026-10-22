@@ -601,7 +601,7 @@ export default {
       "id": "lesson-068-ex-036",
       "type": "listen-and-type",
       "en": "I might be a little late.",
-      "ar": "قدأتأخر قليلا.",
+      "ar": "قد أتأخر قليلا.",
       "acceptedAnswers": [
         "I might be a little late."
       ],
