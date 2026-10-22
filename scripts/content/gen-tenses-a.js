@@ -193,13 +193,13 @@ const l16Lt = expandAll([
     O: (x) => x.VO.os,
     T: [{ en: 'now', ar: 'الآن' }, { en: 'today', ar: 'اليوم' }, { en: 'at the moment', ar: 'حاليا' }, { en: 'right now', ar: 'في هذه اللحظة' }],
   }, { tags: ['present-continuous', 'negation'], difficulty: 2, limit: 60 }),
-  pat('{S} {BEN} {Ving} {T}.', '{S_ar} لا {V_ar} {T_ar}.', {
+  pat('{S} {BEN} {V} {T}.', '{S_ar} لا {V_ar} {T_ar}.', {
     S: B.PRONOUNS,
     BEN: (x) => [{ en: `${BE[x.S.agr]} not`, ar: '' }],
     V: (x) => ['work', 'sleep', 'come', 'stay', 'drive', 'run'].map((v) => ({ en: C.enIng(v), ar: C.arPresent(v, x.S.agr) })),
     T: [{ en: 'today', ar: 'اليوم' }, { en: 'this week', ar: 'هذا الأسبوع' }, { en: 'tonight', ar: 'الليلة' }, { en: 'right now', ar: 'في هذه اللحظة' }],
   }, { tags: ['present-continuous', 'negation'], difficulty: 2, limit: 50 }),
-  pat('{BE} {S} {Ving} {T}?', 'هل {S_ar} {V_ar} {T_ar}؟', {
+  pat('{BE} {S} {V} {T}?', 'هل {S_ar} {V_ar} {T_ar}؟', {
     S: B.PRONOUNS,
     BE: (x) => [{ en: BE[x.S.agr].charAt(0).toUpperCase() + BE[x.S.agr].slice(1), ar: '' }],
     V: (x) => ['work', 'study', 'come', 'listen', 'sleep', 'drive'].map((v) => ({ en: C.enIng(v), ar: C.arPresent(v, x.S.agr) })),
@@ -341,8 +341,8 @@ const l19Lt = expandAll([
   pat('{S} {HAVE} {V} {D}.', '{S_ar} {V_ar} {D_ar}.', {
     S: B.PRONOUNS,
     HAVE: (x) => [{ en: HAVE[x.S.agr], ar: '' }],
-    VO: [{ v: 'wait', os: [{ en: 'for the bus', ar: 'للحافلة' }] }, { v: 'study', os: [{ en: 'for the exam', ar: 'للاختبار' }] }, { v: 'work', os: [{ en: 'on this project', ar: 'على هذا المشروع' }] }, { v: 'practice', os: [{ en: 'the guitar', ar: 'على الجيتار' }] }, { v: 'learn', os: [{ en: 'English', ar: 'الإنجليزية' }] }, { v: 'sleep', os: [{ en: '', ar: '' }] }, { v: 'sit', os: [{ en: 'here', ar: 'هنا' }] }],
-    V: (x) => [{ en: `been ${C.enIng(x.VO.v)}` + (x.VO.os[0].en ? ` ${x.VO.os[0].en}` : ''), ar: C.arPresent(x.VO.v, x.S.agr) }],
+    VO: [{ v: 'wait', os: [{ en: 'for the bus', ar: 'الحافلة' }] }, { v: 'study', os: [{ en: 'for the exam', ar: 'للاختبار' }] }, { v: 'work', os: [{ en: 'on this project', ar: 'على هذا المشروع' }] }, { v: 'practice', os: [{ en: 'the guitar', ar: 'على الجيتار' }] }, { v: 'learn', os: [{ en: 'English', ar: 'الإنجليزية' }] }, { v: 'sleep', os: [{ en: '', ar: '' }] }, { v: 'sit', os: [{ en: 'here', ar: 'هنا' }] }],
+    V: (x) => [{ en: `been ${C.enIng(x.VO.v)}` + (x.VO.os[0].en ? ` ${x.VO.os[0].en}` : ''), ar: C.arPresent(x.VO.v, x.S.agr) + (x.VO.os[0].ar ? ' ' + x.VO.os[0].ar : '') }],
     D: B.TIME_DURATION.slice(0, 6),
   }, { tags: ['present-perfect-continuous'], difficulty: 3, limit: 70 }),
 ]);
@@ -483,7 +483,7 @@ const l22Lt = expandAll([
   pat("{S} {DIDN} {V} {O} {T}.", '{S_ar} لم {V_ar} {O_ar} {T_ar}.', {
     S: B.PRONOUNS,
     DIDN: (x) => [{ en: "didn't", ar: '' }],
-    VO: [{ v: 'go', os: [IRREG_OBJS[0]] }, { v: 'eat', os: [IRREG_OBJS[1]] }, { v: 'drink', os: [IRREG_OBJS[2]] }, { v: 'see', os: [IRREG_OBJS[3]] }, { v: 'buy', os: [IRREG_OBJS[5]] }, { v: 'watch', os: [{ en: 'the match', ar: 'المباراة' }] }, { v: 'call', os: [{ en: 'me', ar: '' }] }],
+    VO: [{ v: 'go', os: [IRREG_OBJS[0]] }, { v: 'eat', os: [IRREG_OBJS[1]] }, { v: 'drink', os: [IRREG_OBJS[2]] }, { v: 'see', os: [IRREG_OBJS[3]] }, { v: 'buy', os: [IRREG_OBJS[5]] }, { v: 'watch', os: [{ en: 'the match', ar: 'المباراة' }] }],
     V: (x) => [{ en: x.VO.v + (x.VO.os[0].ar ? '' : ' ' + x.VO.os[0].en), ar: C.arPresent(x.VO.v, x.S.agr) }],
     O: (x) => [{ en: x.VO.os[0].en.includes(' ') && !x.VO.os[0].ar ? '' : x.VO.os[0].en, ar: x.VO.os[0].ar }],
     T: B.TIME_POINT.slice(0, 5),
@@ -603,9 +603,9 @@ const l24Fills = [
   fillFrom({ en: 'The train had left before I arrived.', ar: 'كان القطار قد غادر قبل وصولي.', tags: ['past-perfect'] }, 'had left', { hint: 'had + pp' }),
   fillFrom({ en: 'She had finished the report before the meeting.', ar: 'كانت قد أنهت التقرير قبل الاجتماع.', tags: ['past-perfect'] }, 'had finished', { hint: 'had + pp' }),
   fillFrom({ en: 'They had eaten everything by noon.', ar: 'كانوا قد أكلوا كل شيء بحلول الظهر.', tags: ['past-perfect'] }, 'had eaten', { hint: 'had + pp' }),
-  fillFrom({ en: 'I had never seen snow before that trip.', ar: 'لم أرَ الثلج من قبل قبل تلك الرحلة.', tags: ['past-perfect'] }, 'had never seen', { hint: 'had + never + pp' }),
+  fillFrom({ en: 'I had never seen snow before that trip.', ar: 'لم أرَ الثلج قط قبل تلك الرحلة.', tags: ['past-perfect'] }, 'had never seen', { hint: 'had + never + pp' }),
   fillFrom({ en: 'He had lost his keys, so he called me.', ar: 'كان قد فقد مفاتيحه، لذلك اتصل بي.', tags: ['past-perfect'] }, 'had lost', { hint: 'had + pp' }),
-  fillFrom({ en: 'We had already bought the tickets.', ar: 'كان قد اشترينا التذاكر بالفعل.', tags: ['past-perfect'] }, 'had already bought', { hint: 'had + already + pp' }),
+  fillFrom({ en: 'We had already bought the tickets.', ar: 'كنا قد اشترينا التذاكر بالفعل.', tags: ['past-perfect'] }, 'had already bought', { hint: 'had + already + pp' }),
   fillFrom({ en: 'When she came, the film had started.', ar: 'عندما جاءت، كان الفيلم قد بدأ.', tags: ['past-perfect'] }, 'had started', { hint: 'had + pp' }),
   fillFrom({ en: 'By ten, everyone had gone home.', ar: 'بحلول العاشرة، كان الجميع قد ذهبوا إلى البيت.', tags: ['past-perfect'] }, 'had gone', { hint: 'had + pp' }),
 ];
@@ -616,7 +616,7 @@ const l24Orders = [
   orderFrom({ en: 'I had never heard that song.', ar: 'لم أكن قد سمعت تلك الأغنية.', tags: ['past-perfect'] }),
   orderFrom({ en: 'They had eaten before we came.', ar: 'كانوا قد أكلوا قبل أن نأتي.', tags: ['past-perfect'] }),
   orderFrom({ en: 'He had lost the key.', ar: 'كان قد فقد المفتاح.', tags: ['past-perfect'] }),
-  orderFrom({ en: 'We had bought everything.', ar: 'كان قد اشترينا كل شيء.', tags: ['past-perfect'] }),
+  orderFrom({ en: 'We had bought everything.', ar: 'كنا قد اشترينا كل شيء.', tags: ['past-perfect'] }),
 ];
 
 const l24Mc = [

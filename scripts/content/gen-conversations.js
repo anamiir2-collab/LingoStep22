@@ -1401,7 +1401,7 @@ const l68Lt = T(TG68, [
   ['Thanks for inviting me.', 'شكرا لدعوتي.', 2],
   ['We are planning a picnic on Friday.', 'نخطط لرحلة يوم الجمعة.', 2],
   ['Count me in!', 'احسبني من الحضور!', 2],
-  ['I might be a little late.', 'قدأتأخر قليلا.', 2],
+  ['I might be a little late.', 'قد أتأخر قليلا.', 2],
   ['The invitation says seven sharp.', 'الدعوة تقول السابعة تماما.', 2],
   ['What should I wear?', 'ماذا ألبس؟', 2],
   ['It is casual, jeans are fine.', 'اللبس عادي، الجينز مناسب.', 2],

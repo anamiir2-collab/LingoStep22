@@ -38,8 +38,8 @@ const ADJ_G = {
   interesting:{ m: 'ممتع', f: 'ممتعة', p: 'ممتعون' },
   boring:     { m: 'ممل', f: 'مملة', p: 'مملون' },
   late:       { m: 'متأخر', f: 'متأخرة', p: 'متأخرون' },
-  hungry:     { m: 'جائع', f: 'جائعة', p: 'جياع' },
-  thirsty:    { m: 'عطشان', f: 'عطشى', p: 'عطاش' },
+  hungry:     { m: 'جائع', f: 'جائعة', p: 'جائعون' },
+  thirsty:    { m: 'عطشان', f: 'عطشى', p: 'عطاشون' },
 };
 
 const BE = { I: 'am', you: 'are', he: 'is', she: 'is', we: 'are', they: 'are' };
@@ -197,8 +197,17 @@ const l2Lt = expandAll([
   }, { tags: ['subject-pronouns', 'present-simple'], difficulty: 1, limit: 60 }),
   pat('{N} {V} {O}.', '{N_ar} {V_ar} {O_ar}.', {
     N: B.NAMED_SING,
-    V: (x) => ['work', 'study', 'play', 'live', 'speak'].map((v) => ({ en: C.enPresent(v, x.N.agr), ar: C.arPresent(v, x.N.agr) })),
-    O: [{ en: 'English', ar: 'الإنجليزية' }, { en: 'at home', ar: 'في المنزل' }, { en: 'in Cairo', ar: 'في القاهرة' }, { en: 'every day', ar: 'كل يوم' }, { en: 'at school', ar: 'في المدرسة' }],
+    // explicit verb–object pairs so every combination is semantically valid
+    // (a generic cross-product produced errors such as "works English")
+    VO3: [
+      { v: 'work', os: [{ en: 'at home', ar: 'في المنزل' }, { en: 'in Cairo', ar: 'في القاهرة' }, { en: 'at school', ar: 'في المدرسة' }] },
+      { v: 'study', os: [{ en: 'English', ar: 'الإنجليزية' }] },
+      { v: 'play', os: [{ en: 'outside', ar: 'في الخارج' }, { en: 'in the park', ar: 'في الحديقة' }] },
+      { v: 'live', os: [{ en: 'in Cairo', ar: 'في القاهرة' }, { en: 'near us', ar: 'قربنا' }] },
+      { v: 'speak', os: [{ en: 'English', ar: 'الإنجليزية' }, { en: 'Arabic', ar: 'العربية' }] },
+    ],
+    V: (x) => [{ en: C.enPresent(x.VO3.v, x.N.agr), ar: C.arPresent(x.VO3.v, x.N.agr) }],
+    O: (x) => x.VO3.os,
   }, { tags: ['subject-pronouns', 'third-person-singular'], difficulty: 1, limit: 40 }),
 ]);
 
@@ -445,7 +454,7 @@ const l6Fills = [
   { display: 'Are there ___ questions?', blankWord: 'any', en: 'Are there any questions?', ar: 'هل هناك أي أسئلة؟', acceptedAnswers: ['any'], tags: ['quantifiers'], difficulty: 2 },
   { display: '___ children are playing in the street.', blankWord: 'Those', en: 'Those children are playing in the street.', ar: 'تلك الأطفال يلعبون في الشارع.', acceptedAnswers: ['Those', 'those'], tags: ['demonstratives'], difficulty: 2 },
   { display: 'I bought ___ new books yesterday.', blankWord: 'some', en: 'I bought some new books yesterday.', ar: 'اشتريت بعض الكتب الجديدة أمس.', acceptedAnswers: ['some'], tags: ['quantifiers'], difficulty: 1 },
-  { display: '___ is my favorite chair here.', blankWord: 'This', en: 'This is my favorite chair here.', ar: 'هذا كرسياي المفضل هنا.', acceptedAnswers: ['This', 'this'], tags: ['demonstratives'], difficulty: 1 },
+  { display: '___ is my favorite chair.', blankWord: 'This', en: 'This is my favorite chair.', ar: 'هذا كرسيي المفضل.', acceptedAnswers: ['This', 'this'], tags: ['demonstratives'], difficulty: 1 },
 ];
 
 const l6Orders = [
@@ -474,22 +483,44 @@ const NUM_PL = [
   { num: 'three', numAr: 'ثلاثة', pl: 'books', plAr: 'كتب', sg: 'book', sgAr: 'كتاب' },
   { num: 'four', numAr: 'أربعة', pl: 'chairs', plAr: 'كراسي', sg: 'chair', sgAr: 'كرسي' },
   { num: 'five', numAr: 'خمسة', pl: 'keys', plAr: 'مفاتيح', sg: 'key', sgAr: 'مفتاح' },
-  { num: 'two', numAr: 'اثنان', pl: 'pens', plAr: 'قلمين', sg: 'pen', sgAr: 'قلم' },
-  { num: 'six', numAr: 'ستة', pl: 'photos', plAr: 'صور', sg: 'photo', sgAr: 'صورة' },
+  { num: 'two', numAr: '', pl: 'pens', plAr: 'قلمين', sg: 'pen', sgAr: 'قلم' },
+  { num: 'six', numAr: 'ست', pl: 'photos', plAr: 'صور', sg: 'photo', sgAr: 'صورة' },
   { num: 'three', numAr: 'ثلاث', pl: 'bags', plAr: 'حقائب', sg: 'bag', sgAr: 'حقيبة' },
+];
+/* number + noun travel together so Arabic gender/count agreement is guaranteed
+   (an independent NUM × PL cross-product produced errors such as "اثنان كتب") */
+const NUM_NP = [
+  { en: 'three books', ar: 'ثلاثة كتب' },
+  { en: 'four chairs', ar: 'أربعة كراسي' },
+  { en: 'five keys', ar: 'خمسة مفاتيح' },
+  { en: 'six photos', ar: 'ست صور' },
+  { en: 'three bags', ar: 'ثلاث حقائب' },
+  { en: 'four buses', ar: 'أربع حافلات' },
+  { en: 'five rooms', ar: 'خمس غرف' },
+  { en: 'seven doors', ar: 'سبعة أبواب' },
+  { en: 'eight pens', ar: 'ثمانية أقلام' },
+  { en: 'six shops', ar: 'ستة متاجر' },
+  { en: 'three eggs', ar: 'ثلاث بيضات' },
+  { en: 'ten questions', ar: 'عشرة أسئلة' },
+  { en: 'five phones', ar: 'خمسة هواتف' },
+  { en: 'six boxes', ar: 'ستة صناديق' },
+  { en: 'four stories', ar: 'أربع قصص' },
+  { en: 'seven students', ar: 'سبعة طلاب' },
+  { en: 'five minutes', ar: 'خمس دقائق' },
+  { en: 'four shirts', ar: 'أربع قمصان' },
+  { en: 'eight buses', ar: 'ثماني حافلات' },
+  { en: 'three phones', ar: 'ثلاثة هواتف' },
 ];
 
 const l7Lt = expandAll([
   pat('There is {N} on the table.', 'هناك {N_ar} على الطاولة.', {
     N: NUM_PL.map((x) => ({ en: `a ${x.sg}`, ar: x.sgAr })),
   }, { tags: ['there-is', 'singular', 'articles'], difficulty: 1 }),
-  pat('There are {NUM} {PL} in the room.', 'هناك {NUM_ar} {PL_ar} في الغرفة.', {
-    NUM: NUM_PL.map((x) => ({ en: x.num, ar: x.numAr })),
-    PL: NUM_PL.map((x) => ({ en: x.pl, ar: x.plAr })),
+  pat('There are {NUMNP} in the room.', 'هناك {NUMNP_ar} في الغرفة.', {
+    NUMNP: NUM_NP,
   }, { tags: ['there-are', 'plural'], difficulty: 1 }),
-  pat('I see {NUM} {PL} every day.', 'أرى {NUM_ar} {PL_ar} كل يوم.', {
-    NUM: NUM_PL.map((x) => ({ en: x.num, ar: x.numAr })),
-    PL: NUM_PL.map((x) => ({ en: x.pl, ar: x.plAr })),
+  pat('I see {NUMNP} every day.', 'أرى {NUMNP_ar} كل يوم.', {
+    NUMNP: NUM_NP,
   }, { tags: ['plural', 'present-simple'], difficulty: 1 }),
 ]);
 
@@ -689,7 +720,7 @@ const l10Mc = [
   { question: 'The milk is ___ the fridge.', options: ['in', 'on', 'at'], answerIndex: 0, ar: 'الحليب في الثلاجة.', tags: ['prepositions-of-place'] },
   { question: 'The poster is ___ the wall.', options: ['in', 'on', 'under'], answerIndex: 1, ar: 'الملصق على الحائط.', tags: ['prepositions-of-place'] },
   { question: 'She is waiting ___ the entrance.', options: ['at', 'on', 'in'], answerIndex: 0, ar: 'هي تنتظر عند المدخل.', tags: ['prepositions-of-place'] },
-  { question: 'The dog sleep ___ the chair.', options: ['above', 'under', 'between'], answerIndex: 1, ar: 'الكلب ينام تحت الكرسي.', tags: ['prepositions-of-place'] },
+  { question: 'The dog sleeps ___ the chair.', options: ['above', 'under', 'between'], answerIndex: 1, ar: 'الكلب ينام تحت الكرسي.', tags: ['prepositions-of-place'] },
   { question: 'Choose the correct sentence.', options: ['The bank is next the shop.', 'The bank is next to the shop.', 'The bank is next of the shop.'], answerIndex: 1, ar: 'البنك بجانب المتجر.', tags: ['prepositions-of-place', 'common-mistakes'] },
   { question: 'My apartment is ___ the third floor.', options: ['in', 'at', 'on'], answerIndex: 2, ar: 'شقتي في الطابق الثالث.', tags: ['prepositions-of-place'] },
 ];
@@ -708,9 +739,9 @@ const TIME_PREP = [
 ];
 
 const TIME_SUBJ_EV = [
-  { en: 'The meeting', ar: 'الاجتماع' }, { en: 'The class', ar: 'الحصة' },
-  { en: 'The movie', ar: 'الفيلم' }, { en: 'The train', ar: 'القطار' },
-  { en: 'The game', ar: 'المباراة' }, { en: 'My flight', ar: 'رحلتي' },
+  { en: 'The meeting', ar: 'الاجتماع', g: 'm' }, { en: 'The class', ar: 'الحصة', g: 'f' },
+  { en: 'The movie', ar: 'الفيلم', g: 'm' }, { en: 'The train', ar: 'القطار', g: 'm' },
+  { en: 'The game', ar: 'المباراة', g: 'f' }, { en: 'My flight', ar: 'رحلتي', g: 'f' },
 ];
 
 const l11Lt = expandAll([
@@ -719,8 +750,9 @@ const l11Lt = expandAll([
     V: (x) => ['study', 'work', 'walk', 'rest', 'read'].map((v) => ({ en: C.enPresent(v, x.S.agr), ar: C.arPresent(v, x.S.agr) })),
     TP: TIME_PREP.slice(0, 8),
   }, { tags: ['prepositions-of-time', 'present-simple'], difficulty: 1, limit: 60 }),
-  pat('{E} starts {TP}.', '{E_ar} يبدأ {TP_ar}.', {
+  pat('{E} starts {TP}.', '{E_ar} {START_ar} {TP_ar}.', {
     E: TIME_SUBJ_EV.slice(0, 4),
+    START: (x) => [{ en: 'starts', ar: x.E.g === 'f' ? 'تبدأ' : 'يبدأ' }],
     TP: TIME_PREP.slice(0, 8),
   }, { tags: ['prepositions-of-time'], difficulty: 2 }),
 ]);

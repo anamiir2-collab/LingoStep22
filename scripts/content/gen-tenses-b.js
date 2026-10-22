@@ -22,15 +22,18 @@ function build(cfg) {
 const BE = { I: 'am', you: 'are', he: 'is', she: 'is', we: 'are', they: 'are' };
 const HAVE = { I: 'have', you: 'have', he: 'has', she: 'has', we: 'have', they: 'have' };
 const FUT_KANA = { I: 'سأكون', you: 'ستكون', he: 'سيكون', she: 'ستكون', we: 'سنكون', they: 'سيكونون' };
+/* lowercase subject forms for mid-sentence positions ("By June, he will …") */
+const PRON_MID = B.PRONOUNS.map((p) => ({ en: p.en === 'I' ? 'I' : p.en.toLowerCase(), ar: p.ar, agr: p.agr }));
+const PEOPLE_MID = B.PEOPLE_SING.map((p) => ({ ...p, en: p.en.charAt(0).toLowerCase() + p.en.slice(1) }));
 const FUT_PLANS = [
-  { v: 'travel', os: [{ en: 'to Dubai', ar: 'إلى دبي' }, { en: 'next month', ar: '' }] },
+  { v: 'travel', os: [{ en: 'to Dubai', ar: 'إلى دبي' }, { en: 'to Alexandria', ar: 'إلى الإسكندرية' }] },
   { v: 'visit', os: [{ en: 'my grandmother', ar: 'جدتي' }, { en: 'the new museum', ar: 'المتحف الجديد' }] },
   { v: 'start', os: [{ en: 'a new job', ar: 'عملا جديدا' }, { en: 'an English course', ar: 'دورة إنجليزية' }] },
   { v: 'buy', os: [{ en: 'a new car', ar: 'سيارة جديدة' }, { en: 'a house', ar: 'بيتا' }] },
-  { v: 'call', os: [{ en: 'the manager', ar: 'المدير' }, { en: 'them tomorrow', ar: '' }] },
+  { v: 'call', os: [{ en: 'the manager', ar: 'بالمدير' }, { en: 'my friend', ar: 'بصديقي' }] },
   { v: 'finish', os: [{ en: 'the project', ar: 'المشروع' }, { en: 'the report', ar: 'التقرير' }] },
   { v: 'study', os: [{ en: 'engineering', ar: 'الهندسة' }, { en: 'medicine', ar: 'الطب' }] },
-  { v: 'move', os: [{ en: 'to a bigger flat', ar: 'إلى شقة أكبر' }, { en: 'next year', ar: '' }] },
+  { v: 'move', os: [{ en: 'to a bigger flat', ar: 'إلى شقة أكبر' }, { en: 'to a new district', ar: 'إلى حي جديد' }] },
 ];
 const FUT_T = [{ en: 'tomorrow', ar: 'غدا' }, { en: 'next week', ar: 'الأسبوع القادم' }, { en: 'next month', ar: 'الشهر القادم' }, { en: 'next year', ar: 'العام القادم' }, { en: 'soon', ar: 'قريبا' }, { en: 'tonight', ar: 'الليلة' }, { en: 'later', ar: 'لاحقا' }, { en: 'this weekend', ar: 'عطلة نهاية هذا الأسبوع' }];
 
@@ -95,7 +98,7 @@ const l26Lt = expandAll([
   }, { tags: ['future-continuous'], difficulty: 3, limit: 70 }),
   pat('At {CLOCK}, {P} will be {V}.', 'في {CLOCK_ar}، {P_ar} {V_ar}.', {
     CLOCK: [{ en: 'ten', ar: 'العاشرة' }, { en: 'noon', ar: 'الظهر' }, { en: 'midnight', ar: 'منتصف الليل' }, { en: 'eight', ar: 'الثامنة' }],
-    P: B.PEOPLE_SING.slice(0, 8),
+    P: PEOPLE_MID.slice(0, 8),
     VO: [{ v: 'cook', os: [] }, { v: 'drive', os: [] }, { v: 'teach', os: [] }, { v: 'rest', os: [] }, { v: 'study', os: [] }],
     V: (x) => [{ en: C.enIng(x.VO.v), ar: C.arPresent(x.VO.v, x.P.agr) }],
   }, { tags: ['future-continuous'], difficulty: 3, limit: 60 }),
@@ -105,7 +108,7 @@ const l26Fills = [
   fillFrom({ en: 'At ten, I will be sleeping.', ar: 'في العاشرة سأنام.', tags: ['future-continuous'] }, 'will be sleeping', { hint: 'will be + -ing' }),
   fillFrom({ en: 'She will be travelling all day.', ar: 'ستكون مسافرة طوال اليوم.', tags: ['future-continuous'] }, 'will be travelling', { hint: 'will be + -ing' }),
   fillFrom({ en: 'They will be waiting at the gate.', ar: 'سيكونون ينتظرون عند البوابة.', tags: ['future-continuous'] }, 'will be waiting', { hint: 'will be + -ing' }),
-  fillFrom({ en: 'We will be flying at midnight.', ar: 'سنكون في الطيران عند منتصف الليل.', tags: ['future-continuous'] }, 'will be flying', { hint: 'will be + -ing' }),
+  fillFrom({ en: 'We will be flying at midnight.', ar: 'سنكون مسافرين جوا عند منتصف الليل.', tags: ['future-continuous'] }, 'will be flying', { hint: 'will be + -ing' }),
   fillFrom({ en: 'He will be working at this time tomorrow.', ar: 'سيعمل في هذا الوقت غدا.', tags: ['future-continuous'] }, 'will be working', { hint: 'will be + -ing' }),
   fillFrom({ en: 'At noon, she will be cooking lunch.', ar: 'ظهرا ستطبخ الغداء.', tags: ['future-continuous'] }, 'will be cooking', { hint: 'will be + -ing' }),
   fillFrom({ en: 'I will be studying all evening.', ar: 'سأدرس طوال المساء.', tags: ['future-continuous'] }, 'will be studying', { hint: 'will be + -ing' }),
@@ -116,7 +119,7 @@ const l26Orders = [
   orderFrom({ en: 'I will be working at nine.', ar: 'سأعمل في التاسعة.', tags: ['future-continuous'] }),
   orderFrom({ en: 'She will be sleeping by then.', ar: 'ستكون نائمة بحلول ذلك الوقت.', tags: ['future-continuous'] }),
   orderFrom({ en: 'They will be travelling tomorrow.', ar: 'سيكونون مسافرين غدا.', tags: ['future-continuous'] }),
-  orderFrom({ en: 'We will be waiting outside.', ar: 'سنكون ننتظر في الخارج.', tags: ['future-continuous'] }),
+  orderFrom({ en: 'We will be waiting outside.', ar: 'سننتظر في الخارج.', tags: ['future-continuous'] }),
   orderFrom({ en: 'He will be driving all night.', ar: 'سيقود طوال الليل.', tags: ['future-continuous'] }),
   orderFrom({ en: 'It will be raining tonight.', ar: 'ستمطر الليلة.', tags: ['future-continuous'] }),
 ];
@@ -124,7 +127,7 @@ const l26Orders = [
 const l26Mc = [
   { question: 'At nine tonight, I ___ dinner.', options: ['will cook', 'will be cooking', 'cook'], answerIndex: 1, ar: 'في التاسعة الليلة سأطبخ العشاء.', tags: ['future-continuous'] },
   { question: 'Future continuous = …', options: ['will + base', 'will be + -ing', 'will have + pp'], answerIndex: 1, ar: 'will be + فعل + ing.', tags: ['future-continuous'] },
-  { question: 'She ___ at this time tomorrow.', options: ['will fly', 'will be flying', 'flies'], answerIndex: 1, ar: 'ستكون في الطيران في هذا الوقت غدا.', tags: ['future-continuous'] },
+  { question: 'She ___ at this time tomorrow.', options: ['will fly', 'will be flying', 'flies'], answerIndex: 1, ar: 'ستكون مسافرة جوا في هذا الوقت غدا.', tags: ['future-continuous'] },
   { question: 'Which shows an action in progress at a FUTURE time?', options: ['I work at nine.', 'I will be working at nine.', 'I worked at nine.'], answerIndex: 1, ar: 'سأعمل في التاسعة (حدث جار مستقبلي).', tags: ['future-continuous'] },
   { question: 'They ___ for us at six.', options: ['will be waiting', 'will wait be', 'will been waiting'], answerIndex: 0, ar: 'سيكونون ينتظروننا في السادسة.', tags: ['future-continuous'] },
   { question: 'Don’t call at eight; I ___ the exam.', options: ['will sit', 'will be sitting', 'sit'], answerIndex: 1, ar: 'لا تتصل في الثامنة؛ سأخوض الاختبار.', tags: ['future-continuous'] },
@@ -179,7 +182,7 @@ const l27Mc = [
 const l28Lt = expandAll([
   pat('By {E}, {S} will have been {V} {D}.', 'بحلول {E_ar}، {FUTK_ar} قد {V_ar} {D_ar}.', {
     E: [{ en: 'ten tonight', ar: 'العاشرة الليلة' }, { en: 'June', ar: 'يونيو' }, { en: 'next month', ar: 'الشهر القادم' }, { en: 'midnight', ar: 'منتصف الليل' }],
-    S: B.PRONOUNS,
+    S: PRON_MID,
     VO: [{ v: 'work', os: [] }, { v: 'study', os: [] }, { v: 'wait', os: [] }, { v: 'drive', os: [] }, { v: 'live', os: [] }],
     V: (x) => [{ en: C.enIng(x.VO.v), ar: C.arPast(x.VO.v, x.S.agr) }],
     D: [{ en: 'for eight hours', ar: 'لمدة ثماني ساعات' }, { en: 'for three hours', ar: 'لمدة ثلاث ساعات' }, { en: 'for ten years', ar: 'لمدة عشر سنوات' }, { en: 'for two hours', ar: 'لمدة ساعتين' }],
@@ -203,7 +206,7 @@ const l28Orders = [
   orderFrom({ en: 'She will have been teaching since morning.', ar: 'ستكون قد علمت منذ الصباح.', tags: ['future-perfect-continuous'] }),
   orderFrom({ en: 'They will have been waiting for hours.', ar: 'سيكونون قد انتظروا لمدة ساعات.', tags: ['future-perfect-continuous'] }),
   orderFrom({ en: 'He will have been living here for years.', ar: 'سيكون قد عاش هنا لمدة سنوات.', tags: ['future-perfect-continuous'] }),
-  orderFrom({ en: 'We will have been driving all night.', ar: 'سنكون قد قُدنا طوال الليل.', tags: ['future-perfect-continuous'] }),
+  orderFrom({ en: 'We will have been driving all night.', ar: 'سنكون قد قادنا طوال الليل.', tags: ['future-perfect-continuous'] }),
   orderFrom({ en: 'I will have been studying since March.', ar: 'سأكون قد درست منذ مارس.', tags: ['future-perfect-continuous'] }),
 ];
 
@@ -322,10 +325,10 @@ const l30Mc = [
    031 Present Continuous for arranged future
    ============================================================ */
 const ARRANGE = [
-  { v: 'meet', os: [{ en: 'the manager', ar: 'المدير' }, { en: 'her tomorrow', ar: '' }], arMap: { meet: 'قابل' } },
+  { v: 'meet', os: [{ en: 'the manager', ar: 'المدير' }, { en: 'our teacher', ar: 'معلمتنا' }] },
   { v: 'visit', os: [{ en: 'my cousins', ar: 'أبناء عمي' }, { en: 'the new office', ar: 'المكتب الجديد' }] },
   { v: 'see', os: [{ en: 'the doctor', ar: 'الطبيب' }, { en: 'the dentist', ar: 'طبيب الأسنان' }] },
-  { v: 'play', os: [{ en: 'football on Friday', ar: 'كرة القدم يوم الجمعة' }, { en: 'chess tonight', ar: 'الشطرنج الليلة' }] },
+  { v: 'play', os: [{ en: 'football', ar: 'كرة القدم' }, { en: 'chess', ar: 'الشطرنج' }] },
   { v: 'eat', os: [{ en: 'dinner with friends', ar: 'العشاء مع الأصدقاء' }] },
   { v: 'attend', os: [{ en: 'a meeting', ar: 'اجتماعا' }, { en: 'a workshop', ar: 'ورشة عمل' }] },
   { v: 'fly', os: [{ en: 'to Cairo', ar: 'إلى القاهرة' }, { en: 'to London', ar: 'إلى لندن' }] },
@@ -467,7 +470,7 @@ const l33Lt = expandAll([
     O: (x) => x.VO.os,
     T: B.TIME_POINT.slice(0, 4),
   }, { tags: ['past-simple', 'contrast'], difficulty: 2, limit: 40 }),
-  pat('{S} {PRES} {O} every day.', '{S_ar} {V_ar} {O_ar} كل يوم.', {
+  pat('{S} {PRES} {O} every day.', '{S_ar} {PRES_ar} {O_ar} كل يوم.', {
     S: B.PRONOUNS.slice(0, 4),
     VO: [{ v: 'eat', os: [{ en: 'rice', ar: 'الأرز' }] }, { v: 'read', os: [{ en: 'the newspaper', ar: 'الصحيفة' }] }, { v: 'watch', os: [{ en: 'TV', ar: 'التلفاز' }] }],
     PRES: (x) => [{ en: C.enPresent(x.VO.v, x.S.agr), ar: C.arPresent(x.VO.v, x.S.agr) }],
@@ -490,7 +493,7 @@ const l33Fills = [
   { display: 'She usually ___ to school by bus.', blankWord: 'goes', en: 'She usually goes to school by bus.', ar: 'عادة تذهب إلى المدرسة بالحافلة.', acceptedAnswers: ['goes'], tags: ['present-simple'], difficulty: 2 },
   { display: 'They ___ football now.', blankWord: 'are playing', en: 'They are playing football now.', ar: 'يلعبون كرة القدم الآن.', acceptedAnswers: ['are playing', "'re playing", 'are playing'], tags: ['present-continuous'], difficulty: 2 },
   { display: 'They ___ football an hour ago.', blankWord: 'played', en: 'They played football an hour ago.', ar: 'لعبوا كرة القدم قبل ساعة.', acceptedAnswers: ['played'], tags: ['past-simple'], difficulty: 2 },
-  { display: 'Look! It ___ (start) to rain.', blankWord: 'is starting', en: 'Look! It is starting to rain.', ar: 'انظر! إنها بدأت تمطر.', acceptedAnswers: ['is starting', "'s starting"], tags: ['present-continuous'], difficulty: 2 },
+  { display: 'Look! It ___ (start) to rain.', blankWord: 'is starting', en: 'Look! It is starting to rain.', ar: 'انظر! المطر يبدأ الآن.', acceptedAnswers: ['is starting', "'s starting"], tags: ['present-continuous'], difficulty: 2 },
   { display: 'Last night it ___ (start) to rain at ten.', blankWord: 'started', en: 'Last night it started to rain at ten.', ar: 'الليلة الماضية بدأ المطر في العاشرة.', acceptedAnswers: ['started'], tags: ['past-simple'], difficulty: 2 },
 ];
 
@@ -512,7 +515,7 @@ const l33Mc = [
   { question: 'Which time word does NOT fit the past simple?', options: ['ago', 'last night', 'tomorrow'], answerIndex: 2, ar: 'tomorrow لا تناسب الماضي.', tags: ['contrast', 'time-markers'] },
 ];
 
-const PRON_LOW = B.PRONOUNS.map((p) => ({ en: p.en.toLowerCase(), ar: p.ar, agr: p.agr }));
+const PRON_LOW = B.PRONOUNS.map((p) => ({ en: p.en === 'I' ? 'I' : p.en.toLowerCase(), ar: p.ar, agr: p.agr }));
 
 /* ============================================================
    034 Perfect forms contrast
@@ -781,9 +784,9 @@ const GRAM = {
     explanation: 'will vs be going to: use will for decisions made while speaking ("The phone is ringing — I will answer it") and opinions ("I think it will rain"). Use be going to for plans made earlier ("We are going to travel in July") and evidence-based predictions ("Look! It is going to rain").',
     explanationAr: 'will مقابل be going to: نستخدم will للقرارات اللحظية أثناء الكلام ("I will answer it") وللآراء ("I think it will rain"). ونستخدم be going to للخطط السابقة ("We are going to travel in July") وللتنبؤ المدعوم بدليل ("Look! It is going to rain").',
     examples: [
-      { en: 'I will help you. (now)', ar: 'سأساعدك (الآن).' },
-      { en: 'We are going to travel in July. (plan)', ar: 'سنسافر في يوليو (خطة).' },
-      { en: 'Look! It is going to rain. (evidence)', ar: 'انظر! ستمطر (دليل).' },
+      { en: 'I will help you.', ar: 'سأساعدك (قرار لحظي).' },
+      { en: 'We are going to travel in July.', ar: 'سنسافر في يوليو (خطة مسبقة).' },
+      { en: 'Look! It is going to rain.', ar: 'انظر! ستمطر (دليل ظاهر).' },
     ],
   },
   l36: {
