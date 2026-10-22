@@ -32,3 +32,65 @@ HOW TO PUBLISH TO GITHUB PAGES:
     0001-Upgrade-dictation-to-word-grouped-letter-slots-with-.patch
     run:  git am 0001-*.patch   (inside your LingoStep clone)
 GitHub Pages will redeploy automatically after the push (~1 minute).
+
+================================================================================
+v1.5 — Comprehensive Content Audit & Correction (2026-10-22)
+================================================================================
+Full linguistic audit of all 123 generated lessons (6,825 exercises / 6,047
+unique sentences) via regeneration from the content engine. Fixes applied at
+the generator level so every correction propagates; sentence/translation pairs
+re-validated with lint scripts + full browser smoke tests.
+
+ENGLISH FIXES (were live on the site):
+  lesson-022  "I didn't call me me at seven o'clock."  (10 sentences) — broken
+              negation pattern removed from the call entry in gen-tenses-a.
+  lesson-025/029  "I will travel next month tomorrow." (12) — time phrase fused
+              into the object bank collided with the time slot; FUT_PLANS now
+              carries only semantic objects.
+  lesson-031  "I am meeting her tomorrow this weekend." (4) — same fused-time
+              bug in ARRANGE bank.
+  lesson-028/034  "By ten tonight, He will…", "Before the meeting, i had…"
+              (22) — mid-sentence capitalization; lowercase mid-forms added.
+  lesson-035  grammar examples carried "(now)/(plan)/(evidence)" labels inside
+              the sentences; labels moved to the Arabic usage notes.
+  gen-basics  "The dog sleep ___ the chair." → sleeps (distractor question);
+              "This is my favorite chair here." → dropped stray "here".
+  lesson-002  semantic pairing filter added to the N-V-O pattern so no
+              combination like "Omar works English" can ever be generated.
+
+ARABIC FIXES (were live on the site):
+  lesson-033  unreplaced template placeholder "{V_ar}" in 5 sentences.
+  lesson-019  Arabic dropped the object entirely: "I have been studying for the
+              exam" ⇒ "أنا أدرس لمدة…" (60+ sentences now carry للاختبار /
+              الحافلة / على هذا المشروع / على الجيتار / الإنجليزية).
+  lesson-002  "نحن جياع / نحن عطاش" (diptote genitive used as nominative) →
+              "نحن جائعون / عطاشون" across all we/they forms.
+  lesson-007  broken number–counted-noun agreement from an independent NUM × PL
+              cross-product ("اثنان كتب", "ثلاثة قلمين", "أربعة حقائب") —
+              number+noun now travel as one guaranteed-correct pair (20 pairs).
+  lesson-024  "كان قد اشترينا" (3rd-person كان with 1st-person verb) →
+              "كنا قد اشترينا" (2 sentences).
+  lesson-025/029  "سأتصل المدير" → "سأتصل بالمدير" (اتصل takes ب).
+  lesson-026  "سنكون ننتظر" → "سننتظر"; "سنكون في الطيران" → "سنكون مسافرين جوا".
+  lesson-028  passive "قُدنا" misused for active "will have been driving" →
+              "قد قادنا".
+  lesson-033  "إنها بدأت تمطر" tense mismatch → "المطر يبدأ الآن".
+  conjugations.js  hollow verbs (قاد/قال/نام/طار/باع/أقام/جاء) lost their medial
+              alif in 1st/2nd-person past ("سأكون قد قادت" → قدت); overrides
+              added for 8 verbs.
+  gen-basics  "الحصة يبدأ" latent gender bug → gender-aware يبدأ/تبدأ.
+  lesson-047  "إذا كان الأطفال جياعا" → "جائعين".
+  lesson-050  "الزفاف كان قد أجّل" (active) → "تأجّل" (passive).
+  lesson-051  "لا فيها إشارات مرور" → "لا توجد فيها إشارات مرور".
+  lesson-047  "حدّث التطبيق نفسه" → "تم تحديث التطبيق".
+  lesson-068  "قدأتأخر" missing space → "قد أتأخر".
+
+INFRASTRUCTURE:
+  scripts/check-templates.py   — new: detects English template slots without an
+               Arabic counterpart (caught lesson-019's dropped objects).
+  Validation after fixes: validate-lessons ✓ · validate-project ✓ · duplicates
+  ✓ · 8/8 test suites ✓ · Chromium smoke test (home, lessons 002/019/053,
+  correct+wrong answers, XP/streak/word-cards, progress, revision, iPhone 14
+  viewport) ✓ zero console errors.
+
+HOW TO PUBLISH: commit & push to main (GitHub Pages redeploys automatically).
